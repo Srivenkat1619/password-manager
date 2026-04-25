@@ -45,6 +45,9 @@ class PasswordManager extends Component {
   onAddButton = event => {
     event.preventDefault()
     const {websiteInput, usernameInput, passwordInput} = this.state
+    if (websiteInput === '' || usernameInput === '' || passwordInput === '') {
+      return
+    }
     const newObject = {
       id: uuidv4(),
       websiteName: websiteInput,
